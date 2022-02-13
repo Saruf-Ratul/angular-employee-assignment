@@ -1,0 +1,13 @@
+{
+  "employees": [
+    {
+      "firstName": "Mo",
+      "lastName": "Abjal",
+      "contactNumber": "9012114316",
+      "email": "mh@gmail.com",
+      "dob": "2021-06-04",
+      "address": "Bareilly",
+      "id": 3
+    }
+  ]
+}

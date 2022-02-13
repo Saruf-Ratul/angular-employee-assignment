@@ -1,0 +1,27 @@
+<nav
+  class="navbar navbar-expand-lg navbar-light bg-light"
+  style="margin-left: 100px"
+>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/">Employees</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/students">Students</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h5 style="float: right">
+        Current Timezone:
+        <em class="text-info">{{ appService.settings.timezone }}</em> <br />
+        Currency: <em class="text-info">{{ appService.settings.currency }}</em>
+      </h5>
+    </div>
+  </div>
+</div>
+<router-outlet> </router-outlet>

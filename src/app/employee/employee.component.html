@@ -1,0 +1,127 @@
+<div class="container">
+  <div class="row mt-4">
+    <div class="col-12">
+      <h1 class="text-info">Employee Management</h1>
+      <hr />
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class="col-5">
+      <h3 class="text-success">Employee Form</h3>
+      <hr />
+      <div class="row">
+        <form [formGroup]="form">
+          <div class="form-group col-6 float-left p-1">
+            <label for="firstName">First Name</label>
+            <input
+              formControlName="firstName"
+              type="text"
+              id="firstName"
+              class="form-control"
+              [class]="{ error: isValidControl('firstName') }"
+            />
+          </div>
+          <div class="form-group col-6 float-left p-1">
+            <label for="lastName">Last Name</label>
+            <input
+              formControlName="lastName"
+              type="text"
+              id="lastName"
+              class="form-control"
+              [class]="{ error: isValidControl('lastName') }"
+            />
+          </div>
+          <div class="form-group col-6 float-left p-1">
+            <label for="contact-number">Contact No.</label>
+            <input
+              formControlName="contactNumber"
+              type="text"
+              id="contact-number"
+              class="form-control"
+              [class]="{ error: isValidControl('contactNumber') }"
+            />
+          </div>
+          <div class="form-group col-6 float-left p-1">
+            <label for="email">Email</label>
+            <input
+              formControlName="email"
+              type="email"
+              id="email"
+              class="form-control"
+              [class]="{ error: isValidControl('email') }"
+            />
+          </div>
+          <div class="form-group col-6 float-left p-1">
+            <label for="dob">DOB</label>
+            <input
+              formControlName="dob"
+              type="date"
+              id="dob"
+              class="form-control"
+              [class]="{ error: isValidControl('dob') }"
+            />
+          </div>
+          <div class="form-group col-6 float-left p-1">
+            <label for="address">Address</label>
+            <input
+              formControlName="address"
+              type="text"
+              id="address"
+              class="form-control"
+              [class]="{ error: isValidControl('address') }"
+            />
+          </div>
+          <div class="form-group">
+            <button
+              class="form-control btn btn-success mt-3"
+              (click)="saveUpdateEmployee()"
+            >
+              {{ "SAVE" | translate }}
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col-7">
+      <h3 class="text-success">Employee Records</h3>
+      <hr />
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Full Name</th>
+            <th>Contact #</th>
+            <th>Email</th>
+            <th>DOB</th>
+            <th>Address</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let employee of employeeRecords">
+            <td>{{ employee.firstName + " " + employee.lastName }}</td>
+            <td>{{ employee.contactNumber }}</td>
+            <td>{{ employee.email }}</td>
+            <td>{{ employee.dob }}</td>
+            <td>{{ employee.address }}</td>
+            <td>
+              <button
+                class="btn btn-sm btn-primary"
+                (click)="fillEmployeeDetailsIntoForm(employee)"
+                title="Edit"
+              >
+                <i class="fa fa-pencil"></i>
+              </button>
+              <button
+                class="btn btn-sm btn-danger m-1"
+                (click)="deleteEmployee(employee)"
+                title="Delete"
+              >
+                <i class="fa fa-trash"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,6 @@
+.float-left {
+  float: left;
+}
+.error {
+  border: 1px solid red;
+}
